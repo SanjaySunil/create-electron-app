@@ -3,6 +3,10 @@ const chalk = require("chalk");
 const { exec } = require("child_process");
 const download = require("download");
 const fs = require('fs');
+const ora = require('ora');
+
+const installingBoilerplate = ora("Downloading Electron Boilerplate ...\n")
+const installDepend = ora("Installing dependencies ...\n")
 
 /**
  * @description Installation process. This is where the node_modules and the electron app is renamed.
@@ -19,10 +23,13 @@ const install = () => {
       throw err;
     }
 
-    header();
-    console.log(chalk.green("Installed Electron Boilerplate!\n"));
-    console.log(chalk.green("Directory renamed successfully!\n"));
-    console.log("Installing dependencies ...");
+    /**
+     * @description Boilerplate has been downloaded.
+     */
+
+    installingBoilerplate.stopAndPersist({symbol: '✔', text: "Downloaded Electron Boilerplate!\n"})
+    installDepend.start();
+
 
     /**
      * @description node_module installation.
@@ -47,10 +54,7 @@ const install = () => {
        * @description Success message, at this stage, the app is installed successfully.
        */
 
-      header();
-      console.log(chalk.green("Installed Electron Boilerplate!\n"));
-      console.log(chalk.green("Directory renamed successfully!\n"));
-      console.log(chalk.green("Installed dependencies!"));
+      installDepend.stopAndPersist({symbol: '✔', text: "Installed dependencies!\n"})
       console.log("\nSuccess! To start your electron app, run the following:");
       console.log(chalk.grey("\ncd electron-app"));
       console.log(chalk.grey("\nnpm start"));
@@ -67,12 +71,18 @@ const install = () => {
 
 const installBoilerplate = (callback) => {
   (async () => {
-    await download(
-      "https://github.com/D3VSJ/Electron-Boilerplate/archive/master.zip",
-      ".",
-      { extract: true }
-    );
-    callback();
+    try {
+      await download(
+        "https://github.com/D3VSJ/Electron-Boilerplate/archive/master.zip",
+        ".",
+        { extract: true }
+      );
+      callback();
+    }
+    catch(err) {
+      installingBoilerplate.stopAndPersist({symbol: '❌', text: `Received ${err.statusCode} error code. \n`})
+      return;
+    }
   })();
 };
 
@@ -84,7 +94,7 @@ const header = () => {
   console.clear();
   console.log(
     chalk.blueBright(
-      "Welcome to create-electron-app!\n</> with ❤ by Sanjay Sunil (https://github.com/D3VSJ)\n"
+      "Welcome to create-electron-boilerplate!\n</> with ❤ by Sanjay Sunil (https://github.com/D3VSJ)\n"
     )
   );
 };
@@ -95,7 +105,7 @@ const header = () => {
 
 const createElectronApp = () => {
   header();
-  console.log("Installing Electron Boilerplate ...");
+  installingBoilerplate.start()
   installBoilerplate(install);
 };
 
