@@ -1,0 +1,3 @@
+[submodule "Electron-Boilerplate"]
+	path = Electron-Boilerplate
+	url = https://github.com/D3VSJ/Electron-Boilerplate
