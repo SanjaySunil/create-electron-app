@@ -1,0 +1,30 @@
+{
+  "name": "create-electron-app",
+  "version": "1.0.0",
+  "description": "Create an Electron app in less than a minute!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "bin": {
+    "create-electron-app": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D3VSJ/create-electron-app.git"
+  },
+  "keywords": [
+    "create-electron-app",
+    "electron-boilerplate",
+    "electron"
+  ],
+  "author": "D3VSJ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/D3VSJ/create-electron-app/issues"
+  },
+  "homepage": "https://github.com/D3VSJ/create-electron-app#readme",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
