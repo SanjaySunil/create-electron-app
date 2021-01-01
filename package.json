@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/D3VSJ/create-electron-app#readme",
   "dependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "download": "^8.0.0",
+    "download-git-repo": "^3.0.2"
   }
 }
