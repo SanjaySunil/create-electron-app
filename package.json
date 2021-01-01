@@ -1,6 +1,6 @@
 {
-  "name": "create-electron-app",
-  "version": "1.0.0",
+  "name": "create-electron-boilerplate",
+  "version": "1.0.1",
   "description": "Create an Electron app in less than a minute!",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,6 @@
   "homepage": "https://github.com/D3VSJ/create-electron-app#readme",
   "dependencies": {
     "chalk": "^4.1.0",
-    "download": "^8.0.0",
-    "download-git-repo": "^3.0.2"
+    "download": "^8.0.0"
   }
 }

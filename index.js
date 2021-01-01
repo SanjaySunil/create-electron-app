@@ -22,7 +22,7 @@ const install = () => {
     header();
     console.log(chalk.green("Installed Electron Boilerplate!\n"));
     console.log(chalk.green("Directory renamed successfully!\n"));
-    console.log("Installing dependieces ...");
+    console.log("Installing dependencies ...");
 
     /**
      * @description node_module installation.
@@ -50,7 +50,7 @@ const install = () => {
       header();
       console.log(chalk.green("Installed Electron Boilerplate!\n"));
       console.log(chalk.green("Directory renamed successfully!\n"));
-      console.log(chalk.green("Installed dependieces!"));
+      console.log(chalk.green("Installed dependencies!"));
       console.log("\nSuccess! To start your electron app, run the following:");
       console.log(chalk.grey("\ncd electron-app"));
       console.log(chalk.grey("\nnpm start"));
