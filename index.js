@@ -1,4 +1,11 @@
 #!/usr/bin/env node
+
+/**
+ * @file index.js
+ * @author Sanjay Sunil
+ * @license GPL-3.0
+ */
+
 const chalk = require("chalk");
 const { exec } = require("child_process");
 const download = require("download");
@@ -9,7 +16,8 @@ const installingBoilerplate = ora("Downloading Electron Boilerplate ...\n")
 const installDepend = ora("Installing dependencies ...\n")
 
 /**
- * @description Installation process. This is where the node_modules and the electron app is renamed.
+ * @name Installation-process
+ * @description This is where the node_modules and the electron app is renamed.
  */
 
 const install = () => {
@@ -20,8 +28,13 @@ const install = () => {
 
   fs.rename("Electron-Boilerplate-master", "electron-app", (err) => {
     if (err) {
-      throw err;
-    }
+      if (err.syscall == 'rename') {
+        installingBoilerplate.stopAndPersist({symbol: '❌', text: `Cannot rename electron app.`}) && process.exit()
+      }
+      else {
+        throw err;
+      }
+    } 
 
     /**
      * @description Boilerplate has been downloaded.
@@ -38,27 +51,27 @@ const install = () => {
     exec("cd electron-app && npm install", (error, stdout, stderr) => {
       
       /**
+       * @name Error-Message
        * @description Display any necessary error messages.
        */
 
       if (error) {
-        console.log(chalk.red(`\n[ERROR]: ${error.message}`));
-        return;
+        installingBoilerplate.stopAndPersist({symbol: '❌', text: `${error.message}`}) && process.exit()
       }
       if (stderr) {
-        console.log(chalk.red(`\n[STDERR]: ${stderr}`));
-        return;
+        installingBoilerplate.stopAndPersist({symbol: '❌', text: `${stderr}`}) && process.exit()
       }
 
       /**
-       * @description Success message, at this stage, the app is installed successfully.
+       * @name Success-Message
+       * @description At this stage, the app is installed successfully.
        */
 
       installDepend.stopAndPersist({symbol: '✔', text: "Installed dependencies!\n"})
       console.log("\nSuccess! To start your electron app, run the following:");
       console.log(chalk.grey("\ncd electron-app"));
       console.log(chalk.grey("\nnpm start"));
-      console.log(chalk.yellow("\nHappy Hacking!"));
+      console.log(chalk.yellow("\nHappy Developing!"));
 
     });
 
@@ -66,7 +79,8 @@ const install = () => {
 };
 
 /**
- * @description Installation of Boilerplate.
+ * @name installBoilerplate
+ * @description The boilerplate is downloaded at this stage.
  */
 
 const installBoilerplate = (callback) => {
@@ -81,13 +95,14 @@ const installBoilerplate = (callback) => {
     }
     catch(err) {
       installingBoilerplate.stopAndPersist({symbol: '❌', text: `Received ${err.statusCode} error code. \n`})
-      return;
+      return process.exit();
     }
   })();
 };
 
 /**
- * @description Header Component of the App.
+ * @name Header 
+ * @description This is the header that is displayed at the top of the CLI.
  */
 
 const header = () => {
@@ -99,12 +114,20 @@ const header = () => {
   );
 };
 
+const runChecks = () => {
+  if (fs.existsSync('electron-app')) {
+    installingBoilerplate.stopAndPersist({symbol: '❌', text: "A folder named electron-app already exists! Please remove!"}) && process.exit()
+  }
+}
+
 /**
- * @description Create Electron App Main Function.
+ * @name createElectronApp
+ * @description Main function of create-electron-app.
  */
 
 const createElectronApp = () => {
   header();
+  runChecks();
   installingBoilerplate.start()
   installBoilerplate(install);
 };
