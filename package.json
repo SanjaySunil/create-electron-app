@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "bin": {
-    "create-electron-app": "index.js"
+    "create-electron-boilerplate": "index.js"
   },
   "repository": {
     "type": "git",
