@@ -109,7 +109,7 @@ const header = () => {
   console.clear();
   console.log(
     chalk.blueBright(
-      "Welcome to create-electron-boilerplate!\n</> with ❤ by Sanjay Sunil (https://github.com/D3VSJ)\n"
+      "Welcome to create-electron-app!\n</> with ❤ by Sanjay Sunil (https://github.com/D3VSJ)\n"
     )
   );
 };
