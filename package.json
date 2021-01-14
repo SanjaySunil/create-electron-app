@@ -1,6 +1,6 @@
 {
   "name": "new-electron-app",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Create an Electron app in less than a minute!",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,11 @@
     "electron-boilerplate",
     "electron"
   ],
-  "author": "D3VSJ",
+  "author": {
+    "name": "Sanjay Sunil",
+    "email": "sanjaysunil@protonmail.com",
+    "url": "https://sanjaysunil.me"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/D3VSJ/create-electron-app/issues"
