@@ -36,7 +36,7 @@
 
 ## What's create-electron-app?
 
-<a href="" target="_blank">Create-Electron-App</a> is a simple, minimal CLI app that can generate an Electron App within a minute! Create-Electron-App uses <a href="https://github.com/sanjaysunil/create-electron-app">Electron-Boilerplate</a> as the boilerplate. 
+<a href="" target="_blank">Create-Electron-App</a> is a simple, minimal CLI app that can generate an Electron App within a minute! Create-Electron-App uses <a href="https://github.com/sanjaysunil/Electron-Boilerplate">Electron-Boilerplate</a> as the boilerplate. 
 <br/>
 
 <!-- Features -->
