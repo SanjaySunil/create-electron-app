@@ -1,7 +1,7 @@
 <!-- Logo -->
 <p align="center">
   <a href="https://github.com/SanjaySunil/new-electron-app">
-    <img src="./images/icon.png" alt="Logo" width="100" height="100">
+    <img src="./assets/icon.png" alt="Logo" width="100" height="100">
   </a>
 </p>
 
