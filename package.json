@@ -1,6 +1,6 @@
 {
   "name": "new-electron-app",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Create an Electron app in less than a minute!",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/D3VSJ/create-electron-app.git"
+    "url": "git+https://github.com/sanjaysunil/create-electron-app.git"
   },
   "keywords": [
     "create-electron-app",
@@ -25,9 +25,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/D3VSJ/create-electron-app/issues"
+    "url": "https://github.com/sanjaysunil/create-electron-app/issues"
   },
-  "homepage": "https://github.com/D3VSJ/create-electron-app#readme",
+  "homepage": "https://github.com/sanjaysunil/create-electron-app#readme",
   "dependencies": {
     "chalk": "^4.1.0",
     "download": "^8.0.0",
