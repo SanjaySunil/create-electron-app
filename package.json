@@ -32,5 +32,9 @@
     "chalk": "^4.1.0",
     "download": "^8.0.0",
     "ora": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-google": "^0.14.0"
   }
 }
