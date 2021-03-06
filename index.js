@@ -76,7 +76,7 @@ const install = () => {
     });
     installModules.start();
 
-    exec('cd electron-app && npm install', (error, stdout, stderr) => {
+    exec(`cd electron-app && npm install --no-optional`, (error, stdout, stderr) => {
       if (error) {
         installingBoilerplate.stopAndPersist({
           symbol: '❌',
