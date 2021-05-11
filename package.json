@@ -1,6 +1,6 @@
 {
   "name": "new-electron-app",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Create an Electron app in less than a minute!",
   "main": "./src/index.js",
   "scripts": {

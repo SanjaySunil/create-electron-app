@@ -3,7 +3,7 @@
 /**
  * create-electron-app
  * Generate an electron app within a minute!
- * 
+ *
  * @file index.js
  * @author Sanjay Sunil
  * @license GPL-3.0
@@ -20,17 +20,17 @@ const messages = {
   welcome: `Welcome to create-electron-app v${package.version}!\n</> by Sanjay Sunil (https://github.com/sanjaysunil)\n`,
   success: {
     downloadedBoilerplate: 'Downloaded Electron Boilerplate!\n',
-    installedDependencies: 'Installed dependencies!\n'
+    installedDependencies: 'Installed dependencies!\n',
   },
   error: {
     folderExists: 'A folder named electron-app already exists!',
-    cannotRename: 'Cannot rename electron app.'
+    cannotRename: 'Cannot rename electron app.',
   },
   status: {
     downloading: 'Downloading Electron Boilerplate ...\n',
-    installingDependencies: 'Installing dependencies ...\n'
-  }
-}
+    installingDependencies: 'Installing dependencies ...\n',
+  },
+};
 
 const installingBoilerplate = ora(messages.status.downloading);
 const installModules = ora(messages.status.installingDependencies);
@@ -93,7 +93,8 @@ const install = () => {
     });
     installModules.start();
 
-    exec(`cd electron-app && npm install --no-optional`, (error, stdout, stderr) => {
+    exec(`cd electron-app && npm install 
+    --no-optional`, (error, stdout, stderr) => {
       if (error) {
         installingBoilerplate.stopAndPersist({
           symbol: '❌',
