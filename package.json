@@ -2,12 +2,12 @@
   "name": "new-electron-app",
   "version": "1.1.7",
   "description": "Create an Electron app in less than a minute!",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./src/index.js"
   },
   "bin": {
-    "new-electron-app": "index.js"
+    "new-electron-app": "./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "ora": "^5.2.0"
   },
   "devDependencies": {
-    "eslint": "^7.21.0",
+    "eslint": "^7.26.0",
     "eslint-config-google": "^0.14.0"
   }
 }
