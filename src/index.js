@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 /**
+ * create-electron-app
+ * Generate an electron app within a minute!
+ * 
  * @file index.js
  * @author Sanjay Sunil
  * @license GPL-3.0
@@ -8,21 +11,35 @@
 
 const {exec} = require('child_process');
 const download = require('download');
-
 const chalk = require('chalk');
 const fs = require('fs');
 const ora = require('ora');
+const package = require('../package.json');
 
-const package = require('./package.json');
+const messages = {
+  welcome: `Welcome to create-electron-app v${package.version}!\n</> by Sanjay Sunil (https://github.com/sanjaysunil)\n`,
+  success: {
+    downloadedBoilerplate: 'Downloaded Electron Boilerplate!\n',
+    installedDependencies: 'Installed dependencies!\n'
+  },
+  error: {
+    folderExists: 'A folder named electron-app already exists!',
+    cannotRename: 'Cannot rename electron app.'
+  },
+  status: {
+    downloading: 'Downloading Electron Boilerplate ...\n',
+    installingDependencies: 'Installing dependencies ...\n'
+  }
+}
 
-const installingBoilerplate = ora('Downloading Electron Boilerplate ...\n');
-const installModules = ora('Installing dependencies ...\n');
+const installingBoilerplate = ora(messages.status.downloading);
+const installModules = ora(messages.status.installingDependencies);
 
 const header = () => {
   console.clear();
   console.log(
       chalk.blueBright(
-          `Welcome to create-electron-app v${package.version}!\n</> by Sanjay Sunil (https://github.com/sanjaysunil)\n`,
+          messages.welcome,
       ),
   );
 };
@@ -31,7 +48,7 @@ const runChecks = () => {
   if (fs.existsSync('electron-app')) {
     installingBoilerplate.stopAndPersist({
       symbol: '❌',
-      text: 'A folder named electron-app already exists! Please remove!',
+      text: messages.error.folderExists,
     });
     process.exit();
   }
@@ -62,7 +79,7 @@ const install = () => {
       if (err.syscall == 'rename') {
         installingBoilerplate.stopAndPersist({
           symbol: '❌',
-          text: `Cannot rename electron app.`,
+          text: messages.error.cannotRename,
         });
         process.exit();
       } else {
@@ -72,7 +89,7 @@ const install = () => {
 
     installingBoilerplate.stopAndPersist({
       symbol: '✔',
-      text: 'Downloaded Electron Boilerplate!\n',
+      text: messages.success.downloadedBoilerplate,
     });
     installModules.start();
 
@@ -94,7 +111,7 @@ const install = () => {
 
       installModules.stopAndPersist({
         symbol: '✔',
-        text: 'Installed dependencies!\n',
+        text: messages.success.installedDependencies,
       });
       console.log('\nSuccess! To start your electron app, run the following:');
       console.log(chalk.grey('\ncd electron-app'));
