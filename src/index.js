@@ -35,6 +35,9 @@ const messages = {
 const installingBoilerplate = ora(messages.status.downloading);
 const installModules = ora(messages.status.installingDependencies);
 
+/**
+ * Header Component
+ */
 const header = () => {
   console.clear();
   console.log(
@@ -44,6 +47,9 @@ const header = () => {
   );
 };
 
+/**
+ * Checks to see if a folder named 'electron-app` already   exists.
+ */
 const runChecks = () => {
   if (fs.existsSync('electron-app')) {
     installingBoilerplate.stopAndPersist({
@@ -54,6 +60,9 @@ const runChecks = () => {
   }
 };
 
+/**
+ * Downloads the boilerplate from GitHub.
+ */
 const installBoilerplate = (callback) => {
   (async () => {
     try {
@@ -73,6 +82,9 @@ const installBoilerplate = (callback) => {
   })();
 };
 
+/**
+ * Installs dependencies.
+ */
 const install = () => {
   fs.rename('Electron-Boilerplate-master', 'electron-app', (err) => {
     if (err) {
@@ -122,6 +134,9 @@ const install = () => {
   });
 };
 
+/**
+ * Begin create-electron-app.
+ */
 const createElectronApp = () => {
   header();
   runChecks();
