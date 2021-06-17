@@ -17,7 +17,6 @@
     ·
     <a href="">Support</a>
   </p>
-</h1>
 <br/><br/>
 
 <!-- Preview -->
