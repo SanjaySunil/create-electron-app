@@ -51,8 +51,6 @@
 
 ## 🛠 Getting Started
 
-<br/>
-
 <!-- Prerequisites -->
 
 ### **Step 1:** Prerequisites
