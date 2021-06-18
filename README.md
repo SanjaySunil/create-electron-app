@@ -51,7 +51,7 @@
 <!-- Prerequisites -->
 ### **Step 1:** Prerequisites
 
-- NPM
+- npm
 
 ```sh
 npm install npm@latest -g
