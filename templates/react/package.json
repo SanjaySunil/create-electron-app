@@ -1,0 +1,62 @@
+{
+  "name": "electron-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
+    "build": "npm run react-build && npm run electron-build",
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "electron-start": "wait-on http://localhost:3000 && electron .",
+    "electron-build": "electron-builder",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.11.0",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.electron.${name}",
+    "productName": "Electron React App",
+    "files": [
+      "build/**/*",
+      "public/electron.js",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "deb"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

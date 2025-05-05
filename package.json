@@ -1,40 +1,44 @@
 {
   "name": "new-electron-app",
-  "version": "1.1.10",
-  "description": "Create an Electron app in less than a minute!",
-  "main": "./src/index.js",
-  "scripts": {
-    "start": "node ./src/index.js"
-  },
+  "version": "2.0.1",
+  "description": "CLI to create Electron applications with React or Vite templates",
+  "main": "index.js",
   "bin": {
-    "new-electron-app": "./src/index.js"
+    "new-electron-app": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sanjaysunil/create-electron-app.git"
+    "url": "git+https://github.com/sanjaysunil/new-electron-app.git"
   },
   "keywords": [
-    "create-electron-app",
-    "electron-boilerplate",
-    "electron"
+    "electron",
+    "react",
+    "vite",
+    "cli",
+    "template",
+    "scaffold"
   ],
-  "author": {
-    "name": "Sanjay Sunil",
-    "email": "sanjaysunil@protonmail.com",
-    "url": "https://sanjaysunil.me"
-  },
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sanjaysunil/create-electron-app/issues"
+    "url": "https://github.com/sanjaysunil/new-electron-app/issues"
   },
-  "homepage": "https://github.com/sanjaysunil/create-electron-app#readme",
+  "homepage": "https://github.com/sanjaysunil/new-electron-app#readme",
   "dependencies": {
-    "chalk": "^5.0.0",
-    "download": "^8.0.0",
-    "ora": "^5.2.0"
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^8.2.6"
   },
-  "devDependencies": {
-    "eslint": "^8.0.1",
-    "eslint-config-google": "^0.14.0"
-  }
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "bin/",
+    "templates/"
+  ]
 }

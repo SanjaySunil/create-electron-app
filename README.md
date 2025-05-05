@@ -1,94 +1,135 @@
-<!-- Logo -->
-<p align="center">
-  <a href="https://github.com/SanjaySunil/new-electron-app">
-    <img src="./assets/icon.png" alt="Logo" width="100" height="100">
-  </a>
-</p>
+# new-electron-app
 
-<!-- Title -->
-<h1 align="center">create-electron-app</h1>
-  <p align="center">
-    Generate a new Electron App within a minute!
-    <br />
-    <br />
-    <a href="">Report Bug</a>
-    ·
-    <a href="">Request Feature</a>
-    ·
-    <a href="">Support</a>
-  </p>
-<br/><br/>
+A CLI tool to quickly generate Electron applications with either React or Vite templates.
 
-<!-- Preview -->
-<p align="center">
-  <a href="">
-    <img src="./assets/preview.gif" width="100%"/>
-  </a>
-  <!-- Drop Shadow -->
-  <a href="">
-    <img src="./assets/dropShadow.png" width="100%"/>
-  </a>
-</p>
-<br/>
+![License](https://img.shields.io/badge/license-MIT-green)
+![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen)
 
-<!-- Information -->
-## What's create-electron-app?
+## Overview
 
-<a href="" target="_blank">Create-Electron-App</a> is a simple, minimal CLI app that can generate an Electron App within a minute! Create-Electron-App uses <a href="https://github.com/sanjaysunil/Electron-Boilerplate">Electron-Boilerplate</a> as the boilerplate. 
-<br/>
+`new-electron-app` is a command-line tool that helps you jumpstart your Electron development by providing pre-configured templates with either React or Vite. It takes care of all the setup so you can focus on building your application.
 
-<!-- Features -->
-## ✨ Features
+## Installation
 
-- ⚡ **Fast Installation:** Simply run `npx new-electron-app`! 
-- 🔨 **Electron-Builder:** Electron Builder implementation ready for cross-platform builds.
-- ✨ **Customisation:** Easy to customise and built-in features.
-<br/>
+You can use this package in two ways:
 
-<!-- Getting Started -->
-## 🛠 Getting Started
+### Global Installation
 
-<!-- Prerequisites -->
-### **Step 1:** Prerequisites
-
-- npm
-
-```sh
-npm install npm@latest -g
+```bash
+npm install -g new-electron-app
 ```
 
-- new-electron-app
+Then you can create a new app anywhere:
 
-```sh
-npm install new-electron-app -g
+```bash
+new-electron-app my-electron-app
 ```
-<br/>
 
-<!-- Installation -->
-### **Step 2:** Installation
+### Using npx
 
-1. Open your preferred terminal.
+You can also use it directly with npx without installing:
 
-2. Run new-electron-app anywhere!
-```sh
-npx new-electron-app
+```bash
+npx new-electron-app my-electron-app
 ```
-<br/>
 
-<!-- ROADMAP -->
-## Roadmap
+## Features
 
-See the [open issues](https://github.com/SanjaySunil/create-electron-app/issues) for a list of proposed features (and known issues).
-<br/>
+- 🚀 Quick scaffolding of Electron applications
+- 🎭 Choose between React or Vite templates
+- ⚙️ Pre-configured for development and production
+- 📦 Complete build setup with electron-builder
+- 🛠 Hot Module Replacement for fast development
 
-<!-- CONTRIBUTING -->
+## Usage
+
+```bash
+new-electron-app [project-name] [options]
+```
+
+If you don't provide a project name, you'll be prompted for one.
+
+### Options
+
+- `--skip-install`: Skip installing dependencies
+- `--verbose`: Print additional logs
+- `--typescript`: Use TypeScript template (coming soon)
+
+## Templates
+
+### React Template
+
+- React 18 with create-react-app configuration
+- Electron integrated with development server
+- Hot reloading for React components
+- Production build setup with electron-builder
+
+### Vite Template
+
+- React 18 with Vite for faster development
+- HMR (Hot Module Replacement) for even quicker development cycles
+- Optimized build process
+- Production build setup with electron-builder
+
+## Scripts
+
+Both templates include the following npm scripts:
+
+- `npm start`: Start the application in development mode
+- `npm run build`: Build the application for production
+
+## Project Structure
+
+### React Template
+```
+my-electron-app/
+├── node_modules/
+├── public/
+│   ├── electron.js    # Main Electron process
+│   └── index.html     # HTML template
+├── src/
+│   ├── App.css        # Application styles
+│   ├── App.js         # Main React component
+│   ├── index.css      # Global styles
+│   └── index.js       # React entry point
+├── package.json       # Project dependencies and scripts
+└── .gitignore         # Git ignore rules
+```
+
+### Vite Template
+```
+my-electron-app/
+├── node_modules/
+├── dist/              # Built files (after build)
+├── src/
+│   ├── App.css        # Application styles
+│   ├── App.jsx        # Main React component
+│   ├── index.css      # Global styles
+│   └── main.jsx       # React entry point
+├── electron.js        # Main Electron process
+├── index.html         # HTML template
+├── vite.config.js     # Vite configuration
+├── package.json       # Project dependencies and scripts
+└── .gitignore         # Git ignore rules
+```
+
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-<br/>
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-Copyright © 2021 Sanjay Sunil (sanjaysunil@protonmail.com)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## Acknowledgments
+
+- Electron
+- React
+- Vite
+- electron-builder

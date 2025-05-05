@@ -1,6 +1,0 @@
-theme: jekyll-theme-cayman
-title: create-electron-app
-description: Generate a new electron app within a minute!
-
-github:
-  npm_url: https://www.npmjs.com/package/new-electron-app
